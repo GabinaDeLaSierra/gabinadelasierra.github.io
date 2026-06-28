@@ -169,6 +169,7 @@
 
         /* --- 5. CATEGORÍAS Y TIENDA --- */
         .categories-grid { display: grid; grid-template-columns: repeat(5, 1fr); background-color: var(--bg-dark); }
+        #categorias{ scroll-margin-top: 90px; }
         .category-card { position: relative; height: 380px; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; border-right: 1px solid rgba(179, 146, 88, 0.15); overflow: hidden; }
         .category-card:last-child { border-right: none; }
         
@@ -180,6 +181,7 @@
         .cat-5:hover { background-color: #1a1a1a; }
 
         .category-card h3 { font-family: var(--font-serif); font-size: 16px; color: var(--text-light); letter-spacing:1px; margin-bottom:10px; text-transform: uppercase; }
+        .mas-cafe-title{ white-space: nowrap; font-size: 13px !important; letter-spacing: .5px !important; }
         .category-card .cat-subtitle { font-size: 11px; color: var(--beige); text-transform: none; margin-bottom: 20px; line-height:1.7; }
         .category-card .btn-gold { align-self: flex-start; padding: 6px 12px; font-size: 9px; margin-top:10px; }
         .sierra-whispers { min-height: 90vh; background: #050505; display: flex; align-items: center; justify-content: center; text-align: center; padding: 100px 24px; }
@@ -316,10 +318,10 @@
         <nav class="nav-container">
             <ul class="nav-links">
                 <li><a href="#inicio" class="nav-link active">Inicio</a></li>
-                <li><a href="#maria-gabina" class="nav-link">Nuestra Historia</a></li>
-                <li><a href="#categorias" class="nav-link">¿Quiénes Somos?</a></li>
+                <li><a href="#"class="nav-link" onclick="event.preventDefault(); window.scrollTo({ top: document.getElementById('maria-gabina').offsetTop - 80, behavior:'smooth' });">Nuestra Historia</a></li>
+                <li><a href="#"class="nav-link" onclick="event.preventDefault(); window.scrollTo({ top: document.getElementById('categorias').offsetTop - 60, behavior:'smooth' });">¿Quiénes Somos?</a></li>
                 <li><a href="#leyendas-lista" class="nav-link">Leyendas</a></li>
-                <li><a href="#" onclick="abrirModal('tienda', event)">Producto</a></li>
+                <li><a href="#"onclick="abrirModal('tienda', event)">Producto</a></li>
             </ul>
         </nav>
     </header>
@@ -349,7 +351,7 @@
                 Otras se saborean.
             </div>
                 
-            <button class="btn-gold" onclick="document.getElementById('maria-gabina').scrollIntoView({behavior: 'smooth'})">
+            <button class="btn-gold" onclick="window.scrollTo({ top: document.getElementById('maria-gabina').offsetTop - 80, behavior: 'smooth'})">
                     Conoce nuestro origen
             </button>
             </div>
@@ -437,7 +439,7 @@
 
     <section id="categorias" class="categories-grid reveal">
         <div class="category-card cat-1 mas-cafe-card">
-              <h3>MÁS QUE CAFÉ✦¿QUIÉNES SOMOS?</h3>
+              <h3 class="mas-cafe-title">MÁS QUE CAFÉ✦¿QUIÉNES SOMOS?</h3>
         <div class="cat-subtitle">
                 Hay historias que se cuentan con palabras.<br>
                 Otras comienzan con una taza.
@@ -560,7 +562,7 @@
     LA SIERRA TODAVÍA TIENE MUCHO QUE CONTAR.
     </p>
     <button class="btn-gold"
-        onclick="document.getElementById('categorias').scrollIntoView({behavior:'smooth'})">SEGUIR EXPLORANDO</button>
+        onclick="window.scrollTo({ top: document.getElementById('categorias').offsetTop - 60, behavior:'smooth' });">SEGUIR EXPLORANDO</button>
     </div>
 </section>
     <footer class="footer">
