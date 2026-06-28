@@ -248,6 +248,7 @@
         .modal-divider::after,
         .legends-ending .diamond::before,
         .legends-ending .diamond::after{ content:""; width:120px; height:1px; background:rgba(179,146,88,.35); }
+        body.modal-open{ overflow:hidden; }
         
         /* --- VENTANA MODAL --- */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(5px); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; visibility: hidden; transition: var(--transition); }
@@ -271,7 +272,9 @@
         .logo-section h3{ text-align:center; color:var(--gold); font-family:var(--font-serif); letter-spacing:2px; font-size:15px; margin-bottom:18px; }
         .logo-section p{ text-align:justify; line-height:1.9; margin-bottom:14px; }
         .logo-final{ text-align:center !important; font-family:var(--font-serif); color:var(--beige); font-size:16px; line-height:1.8; letter-spacing:1px; font-style:italic;}
-
+        
+        body.modal-open { overflow: hidden; }
+        
         /* --- RESPONSIVE --- */
         @media (max-width: 992px) {
             .features-container, .categories-grid, .footer-container { grid-template-columns: 1fr; }
@@ -855,6 +858,7 @@ rio: {
             }
 
                 modal.classList.add('active');
+                document.body.classList.add('modal-open');
 
             setTimeout(() => {
                 document.querySelector(".modal-content").scrollTop = 0; },10);
@@ -862,6 +866,7 @@ rio: {
 
         function cerrarModal() {
             modal.classList.remove('active');
+            document.body.classList.remove('modal-open');
         }
 
         // 5. SIMULACIÓN DE SUSCRIPCIÓN
