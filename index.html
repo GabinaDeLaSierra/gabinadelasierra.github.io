@@ -209,7 +209,7 @@
         /*========================== SUSURROS DE LA SIERRA ==========================*/
 
         .legends-overline{ text-align:center; color:var(--gold); font-family:var(--font-serif); font-size:18px; letter-spacing:8px; text-transform:uppercase; margin-bottom:28px; }
-        .legends-title{ font-family:var(--font-serif); font-size:14px; font-weight:400; text-align:center; letter-spacing:1.5px; color:var(--text-light); margin-bottom:18px; text-transform:uppercase; white-space:normal; }
+        .legends-title{ font-family:var(--font-serif); font-size:14px !important; font-weight:400; text-align:center; letter-spacing:1.5px; color:var(--text-light); margin-bottom:18px; text-transform:uppercase; white-space:normal; }
         .legends-description{ max-width:860px; margin:0 auto 80px auto; }
         .legends-description p{ color:rgba(245,240,230,.78); font-size:15px; line-height:2; text-align:justify; margin-bottom:20px; }
         
@@ -844,7 +844,11 @@ rio: {
                 modalTitle.innerText = data.title;
                 modalText.innerHTML = data.text;
             }
-            if(tipo === "historia" || tipo === "cafe"){
+            if(
+                tipo === "historia" ||
+                tipo === "cafe" ||
+                tipo === "logo")
+            {
                 modalButton.textContent = "SEGUIR EXPLORANDO";
             }else{
                 modalButton.textContent = "SEGUIR DESCUBRIENDO";
