@@ -265,7 +265,13 @@
         .perfil-item:last-child{ border-bottom:none; }
         .perfil-item span{ color:#f5f0e6; letter-spacing:1px; }
         .perfil-item strong{ color:var(--gold); letter-spacing:1px; font-size:16px; }
-        
+        .logo-section{ display:grid; grid-template-columns:1fr 140px; gap:35px; align-items:center; margin:45px 0; }
+        .logo-section.left-img{ grid-template-columns:140px 1fr; }
+        .logo-section img{ width:130px; margin:0 auto; }
+        .logo-section h3{ text-align:center; color:var(--gold); font-family:var(--font-serif); letter-spacing:2px; font-size:15px; margin-bottom:18px; }
+        .logo-section p{ text-align:justify; line-height:1.9; margin-bottom:14px; }
+        .logo-final{ text-align:center !important; font-family:var(--font-serif); color:var(--beige); font-size:16px; line-height:1.8; letter-spacing:1px; font-style:italic;}
+
         /* --- RESPONSIVE --- */
         @media (max-width: 992px) {
             .features-container, .categories-grid, .footer-container { grid-template-columns: 1fr; }
@@ -287,6 +293,10 @@
             .modal-divider::after{ width:70px; }
             .btn-gold{ width:100%; }
             .legends-title{ font-size:22px; line-height:1.3; letter-spacing:2px; white-space:normal; }
+            .logo-section,
+            .logo-section.left-img{ grid-template-columns:1fr; gap:20px; text-align:center; }
+            .logo-section img{ width:120px; }
+            .logo-section p{ text-align:justify; }
         }
         @media (max-width:480px){
             .modal-content{ width:92vw; padding:24px 18px; max-height:90vh; }
@@ -766,10 +776,60 @@ rio: {
                 icon: "fa-mug-hot"
             },
             logo: { 
-                title: "Identidad del Logo", 
-                text: "Explica aquí qué significa el cabello de sirena, las montañas y los elementos visuales de tu marca.", 
-                icon: "fa-pen-nib" 
-            }
+            title: "SIGNIFICADO DEL LOGO", 
+    text: `
+        <p style="text-align:center;">
+            Nada en nuestro logotipo fue colocado por casualidad. Cada trazo tiene un significado y juntos representan la historia que queremos compartir en cada taza de café.
+        </p>
+
+        <div class="modal-divider">✦</div>
+
+        <div class="logo-section right-img">
+            <div>
+                <h3>LA SIRENA</h3>
+                <p>La sirena representa una de las leyendas más conocidas de Citlaltépetl. Durante generaciones ha formado parte de las historias que se cuentan entre los ríos y manantiales de la sierra.</p>
+                <p>También simboliza la abundancia, la fertilidad de la tierra y la esperanza de que cada cosecha traiga buenos frutos. Para nosotros representa la riqueza que nace cuando la naturaleza es respetada y el trabajo se realiza con paciencia.</p>
+            </div>
+            <img src="sirena.png" alt="La sirena">
+        </div>
+
+        <div class="logo-section left-img">
+            <img src="grano.png" alt="El grano de café">
+            <div>
+                <h3>EL GRANO</h3>
+                <p>El grano de café representa el origen de nuestra historia.</p>
+                <p>Es un homenaje al trabajo de nuestra familia, a la tierra que nos ha dado sustento durante generaciones y al compromiso de seguir cultivando y tostando el café de manera artesanal.</p>
+                <p>Cada cosecha comienza aquí.</p>
+            </div>
+        </div>
+
+        <div class="logo-section right-img">
+            <div>
+                <h3>EL HUMO</h3>
+                <p>El humo representa el tostado tradicional a leña, una técnica que ha acompañado a nuestra familia durante generaciones y que da identidad al aroma de nuestro café.</p>
+                <p>Su forma también evoca la neblina que abraza las montañas de la Sierra de Otontepec y los susurros de las historias que han viajado de generación en generación.</p>
+            </div>
+            <img src="humo.png" alt="El humo">
+        </div>
+
+        <div class="logo-section left-img">
+            <img src="GABINA LOGO GRANO TRANSPARENTE.png" alt="Logo Gabina de la Sierra">
+            <div>
+                <h3>EL CONJUNTO</h3>
+                <p>Cuando todos estos elementos se unen, dejan de ser únicamente un logotipo. Se convierten en la representación de nuestra historia.</p>
+                <p>Representan el café, las leyendas, la abundancia, el trabajo de nuestra familia y la esencia de la Sierra de Otontepec.</p>
+                <p>Cada bolsa lleva un pequeño fragmento de ese lugar y de las historias que le dan vida.</p>
+            </div>
+        </div>
+
+        <div class="modal-divider">✦</div>
+
+        <p class="logo-final">
+            Cada elemento del logotipo cuenta una historia; juntos cuentan el origen de la nuestra.
+        </p>
+    `, 
+    icon: "fa-pen-nib" 
+}
         };
 
         const modal = document.getElementById('interactiveModal');
