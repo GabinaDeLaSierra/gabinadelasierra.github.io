@@ -317,11 +317,11 @@
     <header id="navbar">
         <nav class="nav-container">
             <ul class="nav-links">
-                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
-                <li><a href="#"class="nav-link" onclick="event.preventDefault(); window.scrollTo({ top: document.getElementById('maria-gabina').offsetTop - 80, behavior:'smooth' });">Nuestra Historia</a></li>
-                <li><a href="#"class="nav-link" onclick="event.preventDefault(); window.scrollTo({ top: document.getElementById('categorias').offsetTop - 60, behavior:'smooth' });">¿Quiénes Somos?</a></li>
-                <li><a href="#leyendas-lista" class="nav-link">Leyendas</a></li>
-                <li><a href="#"onclick="abrirModal('tienda', event)">Producto</a></li>
+            <li><a id="nav-inicio" href="#inicio" class="nav-link active">Inicio</a></li>
+            <li><a id="nav-historia" href="#" class="nav-link" onclick="event.preventDefault(); window.scrollTo({ top: document.getElementById('maria-gabina').offsetTop - 80, behavior:'smooth' });">Nuestra Historia</a></li>
+            <li><a id="nav-quienes" href="#" class="nav-link" onclick="event.preventDefault(); window.scrollTo({ top: document.getElementById('categorias').offsetTop - 120, behavior:'smooth' });">¿Quiénes Somos?</a></li>
+            <li><a id="nav-leyendas" href="#leyendas-lista" class="nav-link">Leyendas</a></li>
+            <li><a href="#" onclick="abrirModal('tienda', event)">Producto</a></li>
             </ul>
         </nav>
     </header>
@@ -439,7 +439,7 @@
 
     <section id="categorias" class="categories-grid reveal">
         <div class="category-card cat-1 mas-cafe-card">
-              <h3 class="mas-cafe-title">MÁS QUE CAFÉ✦¿QUIÉNES SOMOS?</h3>
+              <h3 class="mas-cafe-title">MÁS QUE CAFÉ ✦ ¿QUIÉNES SOMOS?</h3>
         <div class="cat-subtitle">
                 Hay historias que se cuentan con palabras.<br>
                 Otras comienzan con una taza.
@@ -562,7 +562,7 @@
     LA SIERRA TODAVÍA TIENE MUCHO QUE CONTAR.
     </p>
     <button class="btn-gold"
-        onclick="window.scrollTo({ top: document.getElementById('categorias').offsetTop - 60, behavior:'smooth' });">SEGUIR EXPLORANDO</button>
+        onclick="window.scrollTo({ top: document.getElementById('categorias').offsetTop - 120, behavior:'smooth' });">SEGUIR EXPLORANDO</button>
     </div>
 </section>
     <footer class="footer">
@@ -629,13 +629,18 @@
         revealElements.forEach(el => revealObserver.observe(el));
 
         // 3. ACTUALIZAR ENLACE ACTIVO EN EL MENÚ
-        const navLinks = document.querySelectorAll('.nav-link'); window.addEventListener('scroll', () => {
-        const y = window.scrollY + 180; navLinks.forEach(link => link.classList.remove('active'));
-        if (y < document.getElementById("maria-gabina").offsetTop) { document.querySelector('a[href="#inicio"]').classList.add("active");} 
-        else if (y < document.getElementById("categorias").offsetTop) { document.querySelector('a[href="#maria-gabina"]').classList.add("active"); } 
-        else if (y < document.getElementById("leyendas-lista").offsetTop) { document.querySelector('a[href="#categorias"]').classList.add("active"); } 
-        else { document.querySelector('a[href="#leyendas-lista"]').classList.add("active"); }
-            });
+        const navLinks = document.querySelectorAll('.nav-link');window.addEventListener('scroll', () => {
+        const y = window.scrollY + 180;navLinks.forEach(link => link.classList.remove('active'));
+        if (y < document.getElementById("maria-gabina").offsetTop) {
+            document.getElementById("nav-inicio").classList.add("active");
+        } else if (y < document.getElementById("categorias").offsetTop) {
+            document.getElementById("nav-historia").classList.add("active");
+        } else if (y < document.getElementById("leyendas-lista").offsetTop) {
+            document.getElementById("nav-quienes").classList.add("active");
+        } else {
+            document.getElementById("nav-leyendas").classList.add("active");
+        }
+    });
         
         // =====================================================================
         // 4. AQUÍ DEBES PONER TU INFORMACIÓN REAL (LOS DATOS DE LA VENTANA MODAL)
