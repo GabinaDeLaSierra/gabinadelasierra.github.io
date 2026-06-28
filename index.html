@@ -176,7 +176,7 @@
         .cat-2 { background: linear-gradient(to top, rgba(0,0,0,.88) 18%, rgba(0,0,0,.45) 48%, rgba(0,0,0,.10) 100%), url('susurros-de-la-sierra.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
         .cat-3 { background: linear-gradient(to top, rgba(0,0,0,0.90) 30%, rgba(0,0,0,0.15) 100%), url('cafetal.png') center center/cover no-repeat; }
         .cat-4 { background: linear-gradient(to top, rgba(0,0,0,.92) 40%, transparent), url('significado-del-logo.png') center/cover;}
-        .cat-5 { background: linear-gradient(to top, rgba(0,0,0,0.95) 40%, transparent), #121212; transition: background 0.3s; }
+        .cat-5{ background: linear-gradient( to top, rgba(0,0,0,.90) 15%, rgba(0,0,0,.45) 55%, rgba(0,0,0,.10) 100% ), url("empaque.png"); background-size: cover; background-position: center; background-repeat: no-repeat; transition: background .3s; }
         .cat-5:hover { background-color: #1a1a1a; }
 
         .category-card h3 { font-family: var(--font-serif); font-size: 16px; color: var(--text-light); letter-spacing:1px; margin-bottom:10px; text-transform: uppercase; }
@@ -465,17 +465,12 @@
             <div class="cat-subtitle">Más que un símbolo.<br>La esencia de nuestra historia.</div>
             <button class="btn-gold" onclick="abrirModal('logo', event)">DESCUBRE SU SIGNIFICADO</button>
             </div>
-            <div class="category-card cat-5" style="text-align:center; justify-content:center;">
-            <img src="empaque.png"
-                 alt="Gabina de la Sierra"
-                 style="width:95px; margin:0 auto 18px auto;">
-            <h3 style="font-size:16px;">DISPONIBLE HOY</h3>
-            <div class="cat-subtitle" style="color:#fff; margin-bottom:15px;">
-                El café que hoy sale de la Sierra.<br>
-                Tostado a leña. Elaborado en pequeños lotes.
+        <div class="category-card cat-5">
+            <h3>DISPONIBLE HOY</h3>
+            <div class="cat-subtitle">El café que hoy sale de la Sierra.<br>Tostado a leña. Elaborado en pequeños lotes.
             </div>
-            <button class="btn-gold" style="align-self:center;" onclick="abrirModal('tienda', event)">CONOCER EL PRODUCTO</button>
-        </div>
+            <button class="btn-gold" onclick="abrirModal('tienda', event)">CONOCER EL PRODUCTO</button>
+            </div>
     </section>
 
 <section class="legends-index reveal" id="leyendas-lista">
